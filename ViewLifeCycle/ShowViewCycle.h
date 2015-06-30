@@ -1,5 +1,5 @@
 //
-//  ViewShowCycle.h
+//  ShowViewCycle.h
 //  ViewLifeCycle
 //
 //  Created by Neil on 6/5/15.
@@ -10,6 +10,6 @@
 
 #define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
 
-@interface ViewShowCycle : UIView
+@interface ShowViewCycle : UIView
 
 @end

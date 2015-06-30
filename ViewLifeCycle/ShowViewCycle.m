@@ -1,14 +1,14 @@
 //
-//  ViewShowCycle.m
+//  ShowViewCycle.m
 //  ViewLifeCycle
 //
 //  Created by Neil on 6/5/15.
 //  Copyright (c) 2015 Prevideo. All rights reserved.
 //
 
-#import "ViewShowCycle.h"
+#import "ShowViewCycle.h"
 
-@implementation ViewShowCycle
+@implementation ShowViewCycle
 
 #pragma mark - @protocol UICoordinateSpace <NSObject>
 
