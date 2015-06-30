@@ -99,105 +99,105 @@
 
 - (void)removeFromSuperview
 {
-    [super removeFromSuperview];
-    
     DLog();
+
+    [super removeFromSuperview];
 }
 
 - (void)insertSubview:(UIView *)view atIndex:(NSInteger)index
 {
-    [super insertSubview:view atIndex:index];
-    
     DLog();
+
+    [super insertSubview:view atIndex:index];
 }
 
 - (void)exchangeSubviewAtIndex:(NSInteger)index1 withSubviewAtIndex:(NSInteger)index2
 {
-    [super exchangeSubviewAtIndex:index1 withSubviewAtIndex:index2];
-    
     DLog();
+
+    [super exchangeSubviewAtIndex:index1 withSubviewAtIndex:index2];
 }
 
 - (void)addSubview:(UIView *)view
 {
-    [super addSubview:view];
-    
     DLog();
+
+    [super addSubview:view];
 }
 
 - (void)insertSubview:(UIView *)view belowSubview:(UIView *)siblingSubview
 {
-    [super insertSubview:view belowSubview:siblingSubview];
-    
     DLog();
+
+    [super insertSubview:view belowSubview:siblingSubview];
 }
 
 - (void)insertSubview:(UIView *)view aboveSubview:(UIView *)siblingSubview
 {
-    [super insertSubview:view aboveSubview:siblingSubview];
-    
     DLog();
+
+    [super insertSubview:view aboveSubview:siblingSubview];
 }
 
 - (void)bringSubviewToFront:(UIView *)view
 {
-    [super bringSubviewToFront:view];
-    
     DLog();
+
+    [super bringSubviewToFront:view];
 }
 
 - (void)sendSubviewToBack:(UIView *)view
 {
-    [super sendSubviewToBack:view];
-    
     DLog();
+
+    [super sendSubviewToBack:view];
 }
 
 - (void)didAddSubview:(UIView *)subview
 {
-    [super didAddSubview:subview];
-    
     DLog();
+
+    [super didAddSubview:subview];
 }
 
 - (void)willRemoveSubview:(UIView *)subview
 {
-    [super willRemoveSubview:subview];
-    
     DLog();
+
+    [super willRemoveSubview:subview];
 }
 
 - (void)willMoveToSuperview:(UIView *)newSuperview
 {
-    [super willMoveToSuperview:newSuperview];
-    
     DLog();
+
+    [super willMoveToSuperview:newSuperview];
 }
 
 - (void)didMoveToSuperview
 {
-    [super didMoveToSuperview];
-    
     DLog();
+
+    [super didMoveToSuperview];
 }
 
 - (void)willMoveToWindow:(UIWindow *)newWindow
 {
-    [super willMoveToWindow:newWindow];
-    
     DLog();
+
+    [super willMoveToWindow:newWindow];
 }
 
 - (void)didMoveToWindow
 {
-    [super didMoveToWindow];
-    
     DLog();
+
+    [super didMoveToWindow];
 }
 
 - (BOOL)isDescendantOfView:(UIView *)view  // returns YES for self.
 {
-    DLog();
+    DLog(@"%@", view);
 
     return [super isDescendantOfView:view];
 }
@@ -212,23 +212,23 @@
 // Allows you to perform layout before the drawing cycle happens. -layoutIfNeeded forces layout early
 - (void)setNeedsLayout
 {
-    [super setNeedsLayout];
-    
     DLog();
+
+    [super setNeedsLayout];
 }
 
 - (void)layoutIfNeeded
 {
-    [super layoutIfNeeded];
-    
     DLog();
+
+    [super layoutIfNeeded];
 }
 
 - (void)layoutSubviews    // override point. called by layoutIfNeeded automatically. As of iOS 6.0, when constraints-based layout is used the base implementation applies the constraints-based layout, otherwise it does nothing.
 {
-    [super layoutSubviews];
-    
     DLog();
+
+    [super layoutSubviews];
 }
 
 /*
@@ -238,32 +238,32 @@
  */
 - (void)layoutMarginsDidChange NS_AVAILABLE_IOS(8_0)
 {
-    [super layoutMarginsDidChange];
-    
     DLog();
+
+    [super layoutMarginsDidChange];
 }
 
 #pragma mark - @interface UIView(UIViewRendering)
 
 - (void)drawRect:(CGRect)rect
 {
-    [super drawRect:rect];
-    
     DLog();
+
+    [super drawRect:rect];
 }
 
 - (void)setNeedsDisplay
 {
-    [super setNeedsDisplay];
-    
     DLog();
+
+    [super setNeedsDisplay];
 }
 
 - (void)setNeedsDisplayInRect:(CGRect)rect
 {
-    [super setNeedsDisplayInRect:rect];
-    
     DLog();
+
+    [super setNeedsDisplayInRect:rect];
 }
 
 /*
@@ -271,9 +271,9 @@
  */
 - (void)tintColorDidChange NS_AVAILABLE_IOS(7_0)
 {
-    [super tintColorDidChange];
-    
     DLog();
+
+    [super tintColorDidChange];
 }
 
 #pragma mark - @interface UIView (UIViewGestureRecognizers)
@@ -281,16 +281,16 @@
 
 - (void)addGestureRecognizer:(UIGestureRecognizer*)gestureRecognizer NS_AVAILABLE_IOS(3_2)
 {
-    [super addGestureRecognizer:gestureRecognizer];
-    
     DLog();
+
+    [super addGestureRecognizer:gestureRecognizer];
 }
 
 - (void)removeGestureRecognizer:(UIGestureRecognizer*)gestureRecognizer NS_AVAILABLE_IOS(3_2)
 {
-    [super removeGestureRecognizer:gestureRecognizer];
-    
     DLog();
+
+    [super removeGestureRecognizer:gestureRecognizer];
 }
 
 // called when the recognizer attempts to transition out of UIGestureRecognizerStatePossible if a touch hit-tested to this view will be cancelled as a result of gesture recognition
@@ -312,45 +312,47 @@
  context. */
 - (void)addMotionEffect:(UIMotionEffect *)effect NS_AVAILABLE_IOS(7_0)
 {
-    [super addMotionEffect:effect];
-    
     DLog();
+
+    [super addMotionEffect:effect];
 }
 
 /*! Stops applying `effect` to the receiver. Any affected presentation values will animate to
  their post-removal values using the present UIView animation context. */
 - (void)removeMotionEffect:(UIMotionEffect *)effect NS_AVAILABLE_IOS(7_0)
 {
-    [super removeMotionEffect:effect];
-    
     DLog();
+
+    [super removeMotionEffect:effect];
 }
 
 #pragma mark - @interface UIView (UIConstraintBasedLayoutInstallingConstraints)
 
 - (void)addConstraint:(NSLayoutConstraint *)constraint NS_AVAILABLE_IOS(6_0) // This method will be deprecated in a future release and should be avoided.  Instead, set NSLayoutConstraint's active property to YES.
 {
-    [super addConstraint:constraint];
-    
     DLog();
+
+    [super addConstraint:constraint];
 }
 
 - (void)addConstraints:(NSArray *)constraints NS_AVAILABLE_IOS(6_0) // This method will be deprecated in a future release and should be avoided.  Instead use +[NSLayoutConstraint activateConstraints:].
 {
-    [super addConstraints:constraints];
-    
     DLog();
+
+    [super addConstraints:constraints];
 }
 
 - (void)removeConstraint:(NSLayoutConstraint *)constraint NS_AVAILABLE_IOS(6_0) // This method will be deprecated in a future release and should be avoided.  Instead set NSLayoutConstraint's active property to NO.
 {
-    [super removeConstraint:constraint];
-    
     DLog();
+
+    [super removeConstraint:constraint];
 }
 
 - (void)removeConstraints:(NSArray *)constraints NS_AVAILABLE_IOS(6_0) // This method will be deprecated in a future release and should be avoided.  Instead use +[NSLayoutConstraint deactivateConstraints:].
 {
+    DLog();
+
     [super removeConstraints:constraints];
 }
 
@@ -358,16 +360,16 @@
 
 - (void)updateConstraintsIfNeeded NS_AVAILABLE_IOS(6_0) // Updates the constraints from the bottom up for the view hierarchy rooted at the receiver. UIWindow's implementation creates a layout engine if necessary first.
 {
-    [super updateConstraintsIfNeeded];
-    
     DLog();
+
+    [super updateConstraintsIfNeeded];
 }
 
 - (void)updateConstraints NS_AVAILABLE_IOS(6_0) // Override this to adjust your special constraints during a constraints update pass
 {
-    [super updateConstraints];
-    
     DLog();
+
+    [super updateConstraints];
 }
 
 - (BOOL)needsUpdateConstraints NS_AVAILABLE_IOS(6_0)
@@ -379,9 +381,9 @@
 
 - (void)setNeedsUpdateConstraints NS_AVAILABLE_IOS(6_0)
 {
-    [super setNeedsUpdateConstraints];
-    
     DLog();
+
+    [super setNeedsUpdateConstraints];
 }
 
 #pragma mark - @interface UIView (UIConstraintBasedCompatibility)
@@ -397,9 +399,9 @@
 
 - (void)setTranslatesAutoresizingMaskIntoConstraints:(BOOL)flag NS_AVAILABLE_IOS(6_0)
 {
+    DLog(@"setTranslatesAutoresizingMaskIntoConstraints:%d", flag);
+
     [super setTranslatesAutoresizingMaskIntoConstraints:flag];
-    
-    DLog();
 }
 
 #pragma mark - @interface UIView (UIConstraintBasedLayoutLayering)
@@ -469,9 +471,9 @@
 
 - (void)setContentHuggingPriority:(UILayoutPriority)priority forAxis:(UILayoutConstraintAxis)axis NS_AVAILABLE_IOS(6_0)
 {
-    [super setContentHuggingPriority:priority forAxis:axis];
-    
     DLog();
+
+    [super setContentHuggingPriority:priority forAxis:axis];
 }
 
 - (UILayoutPriority)contentCompressionResistancePriorityForAxis:(UILayoutConstraintAxis)axis NS_AVAILABLE_IOS(6_0)

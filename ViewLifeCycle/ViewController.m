@@ -20,9 +20,9 @@
 
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id <UIContentContainer>)container NS_AVAILABLE_IOS(8_0)
 {
-    [super preferredContentSizeDidChangeForChildContentContainer:container];
-    
     DLog(@"container:%@", container);
+
+    [super preferredContentSizeDidChangeForChildContentContainer:container];
 }
 
 /*
@@ -33,9 +33,9 @@
  */
 - (void)systemLayoutFittingSizeDidChangeForChildContentContainer:(id <UIContentContainer>)container NS_AVAILABLE_IOS(8_0)
 {
-    [super systemLayoutFittingSizeDidChangeForChildContentContainer:container];
-    
     DLog(@"container:%@", container);
+
+    [super systemLayoutFittingSizeDidChangeForChildContentContainer:container];
 }
 
 /*
@@ -57,10 +57,9 @@
  */
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator>)coordinator NS_AVAILABLE_IOS(8_0)
 {
-    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
-    
     DLog(@"coordinator:%@, size width:%f hight:%f", coordinator, size.width, size.height);
 
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
 }
 
 /*
@@ -70,9 +69,9 @@
  */
 - (void)willTransitionToTraitCollection:(UITraitCollection *)newCollection withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator>)coordinator NS_AVAILABLE_IOS(8_0)
 {
-    [super willTransitionToTraitCollection:newCollection withTransitionCoordinator:coordinator];
-    
     DLog(@"newCollection:%@ coordinator:%@", newCollection, coordinator);
+
+    [super willTransitionToTraitCollection:newCollection withTransitionCoordinator:coordinator];
 }
 
 
@@ -87,23 +86,23 @@
 
 - (void)loadView // This is where subclasses should create their custom view hierarchy if they aren't using a nib. Should never be called directly.
 {
-    [super loadView];
-    
     DLog();
+
+    [super loadView];
 }
 
 - (void)viewDidLoad; // Called after the view has been loaded. For view controllers created in code, this is after -loadView. For view controllers unarchived from a nib, this is after the view is set.
 {
-    [super viewDidLoad];
-    
     DLog();
+
+    [super viewDidLoad];
 }
 
 - (void)performSegueWithIdentifier:(NSString *)identifier sender:(id)sender NS_AVAILABLE_IOS(5_0)
 {
-    [super performSegueWithIdentifier:identifier sender:sender];
-    
     DLog(@"identifier:%@ sender:%@", identifier, sender);
+
+    [super performSegueWithIdentifier:identifier sender:sender];
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender NS_AVAILABLE_IOS(6_0) // Invoked immediately prior to initiating a segue. Return NO to prevent the segue from firing. The default implementation returns YES. This method is not invoked when -performSegueWithIdentifier:sender: is used.
@@ -115,9 +114,9 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender NS_AVAILABLE_IOS(5_0)
 {
-    [super prepareForSegue:segue sender:sender];
-
     DLog(@"segue:%@ sender:%@", segue, sender);
+
+    [super prepareForSegue:segue sender:sender];
 }
 
 // View controllers will receive this message during segue unwinding. The default implementation returns the result of -respondsToSelector: - controllers can override this to perform any ancillary checks, if necessary.
@@ -146,46 +145,46 @@
 
 - (void)viewWillAppear:(BOOL)animated    // Called when the view is about to made visible. Default does nothing
 {
-    [super viewWillAppear:animated];
-    
     DLog();
+
+    [super viewWillAppear:animated];
 }
 
 - (void)viewDidAppear:(BOOL)animated     // Called when the view has been fully transitioned onto the screen. Default does nothing
 {
-    [super viewDidAppear:animated];
-    
     DLog();
+
+    [super viewDidAppear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated // Called when the view is dismissed, covered or otherwise hidden. Default does nothing
 {
-    [super viewWillDisappear:animated];
-    
     DLog();
+
+    [super viewWillDisappear:animated];
 }
 
 - (void)viewDidDisappear:(BOOL)animated  // Called after the view was dismissed, covered or otherwise hidden. Default does nothing
 {
-    [super viewDidDisappear:animated];
-    
     DLog();
+
+    [super viewDidDisappear:animated];
 }
 
 // Called just before the view controller's view's layoutSubviews method is invoked. Subclasses can implement as necessary. The default is a nop.
 - (void)viewWillLayoutSubviews NS_AVAILABLE_IOS(5_0)
 {
-    [super viewWillLayoutSubviews];
-    
     DLog();
+
+    [super viewWillLayoutSubviews];
 }
 
 // Called just after the view controller's view's layoutSubviews method is invoked. Subclasses can implement as necessary. The default is a nop.
 - (void)viewDidLayoutSubviews NS_AVAILABLE_IOS(5_0)
 {
-    [super viewDidLayoutSubviews];
-    
     DLog();
+
+    [super viewDidLayoutSubviews];
 }
 
 
@@ -201,17 +200,17 @@
  */
 - (void)presentViewController:(UIViewController *)viewControllerToPresent animated:(BOOL)flag completion:(void (^)(void))completion NS_AVAILABLE_IOS(5_0)
 {
-    [super presentViewController:viewControllerToPresent animated:flag completion:completion];
-    
     DLog(@"viewControllerToPresent:%@, flag:%d", viewControllerToPresent, flag);
+
+    [super presentViewController:viewControllerToPresent animated:flag completion:completion];
 }
 
 // The completion handler, if provided, will be invoked after the dismissed controller's viewDidDisappear: callback is invoked.
 - (void)dismissViewControllerAnimated: (BOOL)flag completion: (void (^)(void))completion NS_AVAILABLE_IOS(5_0)
 {
-    [super dismissViewControllerAnimated:flag completion:completion];
-    
     DLog();
+
+    [super dismissViewControllerAnimated:flag completion:completion];
 }
 
 /* This method returns either itself or the nearest ancestor that responds to the action. View controllers can return NO from canPerformAction:withSender: to opt out of being a target for a given action. */
@@ -226,17 +225,17 @@
  `[self targetViewControllerForAction:sender:]` first and redirects accordingly if the return value is not `self`, otherwise it will present the vc. */
 - (void)showViewController:(UIViewController *)vc sender:(id)sender NS_AVAILABLE_IOS(8_0)
 {
-    [super showViewController:vc sender:sender];
-    
     DLog(@"vc:%@, sender:%@", vc, sender);
+
+    [super showViewController:vc sender:sender];
 }
 
 /* This method will show a view controller within the semantic "detail" UI associated with the current size-class environment. It's implementation calls  `[self targetViewControllerForAction:sender:]` first and redirects accordingly if the return value is not `self`, otherwise it will present the vc.  */
 - (void)showDetailViewController:(UIViewController *)vc sender:(id)sender NS_AVAILABLE_IOS(8_0)
 {
-    [super showDetailViewController:vc sender:sender];
-    
     DLog(@"vc:%@, sender:%@", vc, sender);
+
+    [super showDetailViewController:vc sender:sender];
 }
 
 /*
@@ -253,9 +252,9 @@
  */
 - (void)addChildViewController:(UIViewController *)childController NS_AVAILABLE_IOS(5_0)
 {
-    [super addChildViewController:childController];
-    
     DLog(@"%@", childController);
+
+    [super addChildViewController:childController];
 }
 
 /*
@@ -273,9 +272,9 @@
  */
 - (void)transitionFromViewController:(UIViewController *)fromViewController toViewController:(UIViewController *)toViewController duration:(NSTimeInterval)duration options:(UIViewAnimationOptions)options animations:(void (^)(void))animations completion:(void (^)(BOOL finished))completion NS_AVAILABLE_IOS(5_0)
 {
-    [super transitionFromViewController:fromViewController toViewController:toViewController duration:duration options:options animations:animations completion:completion];
-    
     DLog(@"fromViewController:%@, toViewController:%@, duration:%f, options:%lu", fromViewController, toViewController, duration, (unsigned long)options);
+
+    [super transitionFromViewController:fromViewController toViewController:toViewController duration:duration options:options animations:animations completion:completion];
 }
 
 // If a custom container controller manually forwards its appearance callbacks, then rather than calling
@@ -285,24 +284,24 @@
 // now tied to the final matching invocation of endAppearanceTransition.
 - (void)beginAppearanceTransition:(BOOL)isAppearing animated:(BOOL)animated __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_5_0)
 {
-    [super beginAppearanceTransition:isAppearing animated:animated];
-    
     DLog();
+
+    [super beginAppearanceTransition:isAppearing animated:animated];
 }
 
 - (void)endAppearanceTransition __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_5_0)
 {
-    [super endAppearanceTransition];
-    
     DLog();
+
+    [super endAppearanceTransition];
 }
 
 // Call to modify the trait collection for child view controllers.
 - (void)setOverrideTraitCollection:(UITraitCollection *)collection forChildViewController:(UIViewController *)childViewController NS_AVAILABLE_IOS(8_0)
 {
-    [super setOverrideTraitCollection:collection forChildViewController:childViewController];
-    
     DLog();
+
+    [super setOverrideTraitCollection:collection forChildViewController:childViewController];
 }
 
 - (UITraitCollection *)overrideTraitCollectionForChildViewController:(UIViewController *)childViewController NS_AVAILABLE_IOS(8_0);
@@ -350,16 +349,16 @@
  */
 - (void)willMoveToParentViewController:(UIViewController *)parent NS_AVAILABLE_IOS(5_0)
 {
-    [super willMoveToParentViewController:parent];
-    
     DLog();
+
+    [super willMoveToParentViewController:parent];
 }
 
 - (void)didMoveToParentViewController:(UIViewController *)parent NS_AVAILABLE_IOS(5_0)
 {
-    [super didMoveToParentViewController:parent];
-    
     DLog();
+
+    [super didMoveToParentViewController:parent];
 }
 
 
@@ -374,9 +373,9 @@
  */
 - (void)updateViewConstraints NS_AVAILABLE_IOS(6_0)
 {
-    [super updateViewConstraints];
-    
     DLog();
+
+    [super updateViewConstraints];
 }
 
 
